@@ -1,5 +1,5 @@
 from binaryninja import *
-from features.src import callchain
+from .features.callchain import recipes_callchain
 
 # Note that this is a sample plugin and you may need to manually edit it with
 # additional functionality. In particular, this example only passes in the
@@ -9,4 +9,4 @@ from features.src import callchain
 # Add documentation about UI plugin alternatives and potentially getting
 # current_* functions
 
-PluginCommand.register('BinjaNxG\\Recipes\\Callchain', 'generate callchain', callchain.main)
+PluginCommand.register('BinjaNxG\\Recipes\\Callchain', 'generate callchain', recipes_callchain)
