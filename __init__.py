@@ -1,5 +1,6 @@
 from binaryninja import *
-from .src import callchain
+from features.src import callchain
+
 # Note that this is a sample plugin and you may need to manually edit it with
 # additional functionality. In particular, this example only passes in the
 # binary view. If you would like to act on an addres or function you should
