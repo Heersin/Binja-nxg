@@ -4,7 +4,7 @@ from .ui.utils import try_str2addr_or_neg_one
 
 
 def print_chain(chain_list):
-    print("CHAIN: ")
+    print("CHAIN: ", end='')
     for item in chain_list:
         print(item, end='')
         print('->', end='')
