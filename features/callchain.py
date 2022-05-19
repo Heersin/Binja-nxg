@@ -1,5 +1,6 @@
 from .src.callchain import main
-from binaryninja.interaction import AddressField, get_form_input
+from binaryninja.interaction import AddressField, get_form_input, TextLineField
+from .ui.utils import try_str2addr_or_neg_one
 
 
 def print_chain(chain_list):
@@ -7,18 +8,19 @@ def print_chain(chain_list):
     for item in chain_list:
         print(item, end='')
         print('->', end='')
-    print("")
+    print("|")
 
 
 def recipes_callchain(bv):
-    source_f = AddressField('src addr (default entry)', default=0)
-    sink_f = AddressField('sink addr', default=0)
+    source_f = TextLineField("src addr (default entry)", default='0x0')
+    sink_f = TextLineField('sink addr ', default='0x0')
+
     get_form_input([source_f, sink_f], 'Target Address Query')
 
-    sink_addr = int(sink_f.result)
-    src_addr = int(source_f.result)
+    sink_addr = try_str2addr_or_neg_one(sink_f.result)
+    src_addr = try_str2addr_or_neg_one(source_f.result)
 
-    if sink_addr == 0:
+    if sink_addr == -1:
         print("Sink Function Address Required")
         return
 
