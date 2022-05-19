@@ -5,7 +5,7 @@ from binaryninja.interaction import AddressField, get_form_input
 def print_chain(chain_list):
     print("CHAIN: ")
     for item in chain_list:
-        print(hex(item), end='')
+        print(item, end='')
         print('->', end='')
     print("")
 
@@ -15,8 +15,8 @@ def recipes_callchain(bv):
     sink_f = AddressField('sink addr', default=0)
     get_form_input([source_f, sink_f], 'Target Address Query')
 
-    sink_addr = sink_f.result
-    src_addr = source_f.result
+    sink_addr = int(sink_f.result)
+    src_addr = int(source_f.result)
 
     if sink_addr == 0:
         print("Sink Function Address Required")

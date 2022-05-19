@@ -1,4 +1,5 @@
 import networkx as nx
+from . import graph_mgr
 
 def gen_direct_graph():
     return nx.DiGraph()

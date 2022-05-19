@@ -1,4 +1,4 @@
-class GraphManager():
+class GraphManager:
     def __init__(self):
         pass
 
@@ -25,3 +25,6 @@ class GraphManager():
 
     def saveCurrentGraph(self):
         pass
+
+    def test(self):
+        print("I'm here")
