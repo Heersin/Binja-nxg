@@ -25,5 +25,5 @@ def main(bv, target_addr, entry_addr=0):
         return []
 
     cg = callgraph_of_fn(target_fn)
-    return find_call_chain(cg, entry_addr, target_addr)
+    return find_call_chain(cg.nx_graph, entry_addr, target_addr)
 
