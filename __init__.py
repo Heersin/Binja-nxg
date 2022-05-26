@@ -1,5 +1,8 @@
 from binaryninja import *
 from .features.callchain import recipes_callchain
+from .features.gen_graphs import gen_what
+from .features.graph_manager import list_graphs, info_show, set_current_graph
+from .features.graph_operation import has_node
 
 # Note that this is a sample plugin and you may need to manually edit it with
 # additional functionality. In particular, this example only passes in the
@@ -33,4 +36,12 @@ PluginCommand.register_for_low_level_il_instruction("BinjaNxG\\Dev\\LLIL", "test
 PluginCommand.register_for_low_level_il_function("BinjaNxG\\Dev\\LLILFN", "test LLIL FN", test_llil_fn)
 
 # ===================== Plugin Features =========================
+# ******** Recipes *********
 PluginCommand.register('BinjaNxG\\Recipes\\Callchain', 'generate callchain', recipes_callchain)
+
+# ******** Graphs **********
+PluginCommand.register('BinjaNxG\\GenGraphs\\what', "test", gen_what)
+PluginCommand.register('BinjaNxG\\Manager\\list', "test", list_graphs)
+PluginCommand.register('BinjaNxG\\Manager\\info current', "test", info_show)
+PluginCommand.register('BinjaNxG\\Manager\\set current', "test", set_current_graph)
+PluginCommand.register('BinjaNxG\\Operation\\has node', "test", has_node)

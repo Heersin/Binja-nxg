@@ -23,4 +23,5 @@ Generate networkx graphs / call chains for analysis
       - analysis implementation based on `graphs`
       - graphs/ : generate graphs (and add to cache)
 
-## Other
+## Future
+Migrate Graph to a Panel, only reserve `recipes` in plugin menu only

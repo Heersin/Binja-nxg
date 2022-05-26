@@ -20,12 +20,11 @@ class BNxGraph:
         self.extra: str = '<comment zone>'
 
 
-
 class GraphManager:
     def __init__(self):
         self.graphs = {}
         self.graph_cnt = 0
-        self.current_graph = None
+        self.current_graph: BNxGraph = None
 
     def check_has_graph_quiet(self, name) -> bool:
         if name in self.graphs:
