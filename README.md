@@ -16,7 +16,11 @@ Generate networkx graphs / call chains for analysis
 
 ## Project Structure
 - Binja-nxg : project main directory
-  - ui : binayrninja ui utlis
-  - src : implements of headless binja
-    - Graph Manager Inside
-  - features : 
+  - features/ : 
+    - recipes code
+    - ui/ : binayrninja ui utlis
+    - src/ : implements for headless binja
+      - analysis implementation based on `graphs`
+      - graphs/ : generate graphs (and add to cache)
+
+## Other
